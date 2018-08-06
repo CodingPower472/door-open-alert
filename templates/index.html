@@ -18,7 +18,7 @@
       <th>status</th>
     </tr>
 
-    {{ for sensor in sensors }}
+    {% for sensor in sensors %}
       <tr id="sensor-{{ loop.index0 }}">
           <td>{{ sensor.title }}</td>
           <td>{{ 'Closed' if sensor.closed else 'Open' }}</tf>

@@ -1,6 +1,6 @@
 
-from flask import Flask, render_template, request, redirect
-from gpiozero import Button
+from flask import Flask, render_template, send_from_directory
+#from gpiozero import Button
 import os
 
 app = Flask(__name__)
@@ -20,7 +20,7 @@ def main():
 		"title": "Sensor 2",
 		"closed": False
 	}]
-	render_template('index.html', sensors = sensors)
+	return render_template('index.html', sensors = sensors)
 	
 @app.route('/js/<path:path>')
 def js(path):
