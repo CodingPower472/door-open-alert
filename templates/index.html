@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  
+   <body>
+     <table style = "width:50%">
+       <tr>
+         <th>Sensor</th>
+         <th>status</th>
+       </tr>
+
+       <tr>
+         <td>1</td>
+         <td>{{ status}}</tf>
+       </tr>
+     </table>
+
+
+      <form action="{{ url_for('handle_data') }}" method="post">
+        <input type="submit", value="{{ tname }}">
+      </form>
+
+   </body>
+</html>
