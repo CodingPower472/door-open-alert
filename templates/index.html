@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
   <table style="width:50%">
     <tr>
       <th>Sensor</th>
@@ -20,14 +21,15 @@
 
     {% for sensor in sensors %}
       <tr id="sensor-{{ loop.index0 }}">
-          <td>{{ sensor.title }}</td>
-          <td>{{ 'Closed' if sensor.closed else 'Open' }}</tf>
+          <td class="title">{{ sensor.title }}</td>
+          <td class="status">{{ 'Closed' if sensor.closed else 'Open' }}</tf>
       </tr>
     {% endfor %}
   </table>
 
 </body>
 
+<script src="/js/lib/jquery.min.js"></script>
 <script src="/js/main.js"></script>
 
 </html>
