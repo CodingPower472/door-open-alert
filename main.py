@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 dir = os.getcwd()
 
-global sensors
+global sensors, x
 sensors = []
 
 led = LED(17)
@@ -14,13 +14,18 @@ button = Button(2, hold_time=10)
 button1 = Button(27)
 
 def alertwebsite():
-	print("Alerting the enemy")
+	if(x == 1):pass
+	else:
+		print("Alerting the enemy")
 
 def wasttime():
+	global x
 	print("wasting time")
+	x = 1
 	led.on()
 	time.sleep(60)
 	led.off()
+	x = 0
 
 
 def setupgpio():
