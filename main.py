@@ -17,6 +17,7 @@ def alertwebsite():
 	if(x == 1):pass
 	else:
 		print("Alerting the enemy")
+		js(path)
 
 def wasttime():
 	global x
@@ -29,6 +30,7 @@ def wasttime():
 
 
 def setupgpio():
+	pass
 	button.when_held = wasttime
 	button1.when_pressed = alertwebsite
 
