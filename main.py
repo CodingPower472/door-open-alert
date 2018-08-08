@@ -14,10 +14,13 @@ button = Button(2, hold_time=10)
 button1 = Button(27)
 
 def alertwebsite():
-	if(x == 1):pass
+	if(x == 1):
+		z = 0
 	else:
 		print("Alerting the enemy")
-		js(path)
+		z = 1
+		main()
+
 
 def wasttime():
 	global x
@@ -30,7 +33,6 @@ def wasttime():
 
 
 def setupgpio():
-	pass
 	button.when_held = wasttime
 	button1.when_pressed = alertwebsite
 
@@ -45,7 +47,7 @@ def main():
 		"title": "Sensor 2",
 		"closed": False
 	}]
-	return render_template('index.html', sensors = sensors)
+	return render_template('index.html', sensors = sensors, z = z)
 
 @app.route('/js/<path:path>')
 def js(path):
